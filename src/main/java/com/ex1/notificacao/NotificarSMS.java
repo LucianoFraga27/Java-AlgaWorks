@@ -6,7 +6,7 @@ import com.ex1.modelo.Cliente;
 
 @Component
 public class NotificarSMS implements Notificador {
-
+	@TipoDoNotificador(NivelUrgencia.SEM_URGENCIA)
 	@Override
 	public void notificar(Cliente cliente, String mensagem) {
 		System.out.printf("Notificando %s através do SMS %s usando SMTP $s : %s\n", 

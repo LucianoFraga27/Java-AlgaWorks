@@ -8,12 +8,14 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.ex1.modelo.Cliente;
+import com.ex1.notificacao.NivelUrgencia;
 import com.ex1.notificacao.Notificador;
+import com.ex1.notificacao.TipoDoNotificador;
 
 @Component
 public class AtivacaoClienteServico {
-
-	@Qualifier("email")
+	
+	@TipoDoNotificador(NivelUrgencia.URGENTE)
 	@Autowired
 	private Notificador notificador;
 	
