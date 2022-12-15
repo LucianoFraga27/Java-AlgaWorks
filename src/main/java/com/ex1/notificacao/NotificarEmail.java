@@ -1,10 +1,13 @@
 package com.ex1.notificacao;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 import com.ex1.modelo.Cliente;
 
-
+@Qualifier("email")
+@Component
 public class NotificarEmail implements Notificador {
 	
 	@Override

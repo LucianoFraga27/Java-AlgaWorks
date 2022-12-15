@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.ex1.modelo.Cliente;
@@ -12,8 +13,9 @@ import com.ex1.notificacao.Notificador;
 @Component
 public class AtivacaoClienteServico {
 
+	@Qualifier("email")
 	@Autowired
-	private List<Notificador> notificadores;
+	private Notificador notificador;
 	
 	
 	
@@ -30,9 +32,9 @@ public class AtivacaoClienteServico {
 	*/
 	public void ativar(Cliente cliente) {
 		cliente.ativar();
-		for(Notificador notificador : notificadores ) {
-			notificador.notificar(cliente, "Seu cadastro no sistema está ativo!");
-		}
+	
+		notificador.notificar(cliente, "Seu cadastro no sistema está ativo!");
+		
 
 	}
 	
