@@ -15,23 +15,11 @@ import com.ex1.notificacao.TipoDoNotificador;
 @Component
 public class AtivacaoClienteServico {
 	
-	@TipoDoNotificador(NivelUrgencia.URGENTE)
+	@TipoDoNotificador(NivelUrgencia.SEM_URGENCIA)
 	@Autowired
 	private Notificador notificador;
 	
-	
-	
-	
-	/*
-	@Autowired
-	public AtivacaoClienteServico(Notificador notificador) {
-		this.notificador = notificador;
-		}
-	
-	public AtivacaoClienteServico(String qualquer) {
-		
-		}
-	*/
+
 	public void ativar(Cliente cliente) {
 		cliente.ativar();
 	
@@ -40,10 +28,4 @@ public class AtivacaoClienteServico {
 
 	}
 	
-	/*
-	@Autowired
-	public void setNotificador(Notificador notificador) {
-		this.notificador = notificador;
-	}
-	*/
 }
